@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rainbow Kids</title>
+  <!-- Link to Font Awesome CDN for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">RainbowKids</div>
+    <div class="nav-links">
+      <a href="#shop">Shop</a>
+      <div class="cart" onclick="toggleCart()">
+        <i class="fas fa-shopping-cart"></i> <!-- Cart Icon -->
+        <span id="cart-count"></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Shop Now Section -->
+  <section id="shop" class="shop-section">
+    <h2>Shop Now</h2>
+    <div class="filter-container">
+      <input type="text" id="search-input" placeholder="Search for products..." class="search-input">
+      <select id="sort-select" class="sort-select">
+        <option value="default">Sort By</option>
+        <option value="lowToHigh">Price: Low to High</option>
+        <option value="highToLow">Price: High to Low</option>
+      </select>
+    </div>
+
+    <div id="product-list" class="product-list">
+      <!-- Product items will be dynamically inserted here -->
+    </div>
+  </section>
+
+  <!-- Cart Modal -->
+  <div id="cart-modal" class="modal">
+    <div class="modal-content">
+      <h2>Your Cart</h2>
+      <div id="cart-items" class="cart-items"></div>
+      <button class="checkout-btn" onclick="openCheckout()">Checkout</button>
+      <button class="checkout-btn" onclick="toggleCart()">Close Cart</button> <!-- Added -->
+    </div>
+  </div>
+  
+
+  <!-- Checkout Modal -->
+  <div id="checkout-modal" class="modal">
+    <div class="modal-content">
+      <h2>Checkout</h2>
+      <form id="checkout-form">
+        <input type="text" placeholder="Full Name">
+        <input type="text" placeholder="Address Line 1">
+        <input type="text" placeholder="Address Line 2">
+        <input type="text" placeholder="City">
+        <input type="text" placeholder="State/Province">
+        <input type="text" placeholder="ZIP/Postal Code">
+        <input type="text" placeholder="Country">
+        <input type="text" placeholder="Card Number">
+        <input type="text" placeholder="Card Expiry (MM/YY)">
+        <input type="text" placeholder="CVV">
+        <button type="button" class="confirm-btn" onclick="confirmOrder()">Place Order</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Confirmation -->
+  <div id="order-popup" class="popup">
+    <h2>Order Placed</h2>
+    <p>Thank you for your purchase!</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
